@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+	int tab[4][4];
+	int a,b,c;
+	c=1;
+	printf("podaj 16 liczb tablicy: \n");
+	for(a=0;a<4;a++)
+	{
+		for(b=0;b<4;b++)
+		{
+			printf("liczba %3d:  ", c);
+			scanf("%d", &tab[a][b]);
+			c++;
+		}
+		
+	}
+	printf("\n tablica wypisana kolejno wierszami: \n");
+	for(a=0;a<4;a++)
+	{
+		for(b=0;b<4;b++)
+		{
+			printf("%3d", tab[a][b]);
+		}
+		printf("\n");
+	}
+	printf("\ntablica wypisana kolejno kolumnami: \n");
+	for(b=0;b<4;b++)
+	{
+		for(a=0;a<4;a++)
+		{
+			printf("%3d", tab[a][b]);
+		}
+		printf("\n");
+	}
+	
+}
