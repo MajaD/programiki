@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int n,a,suma,potega;
+	suma=0;
+	a=0;
+	
+	printf("podaj liczbe: \n");
+	scanf("%d",&n);
+	
+	while(suma<n)
+	{
+		a++;
+		potega=0;
+		potega=a*a;
+		suma=suma+potega;
+	}
+	printf("najwieksza liczba spelniajaca warunek '1^2+2^2+3^2+...+n^2<N' to: %3d\n",a-1);
+}
