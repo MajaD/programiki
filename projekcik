@@ -1,0 +1,77 @@
+#include<stdio.h>
+int main()
+{
+	int tab1[1000];
+	int tab2[1000];
+	int a,b,c,ilejed,dl,krok,jed,indeks,pom;
+	pom=1;
+	printf("podaj dlugosc tablicy: \n");
+	scanf("%d",&dl);
+	
+	for(a=0;a<dl+2;a++)
+	{
+	tab1[a]=0;
+	tab2[a]=0;	
+	}
+	
+	printf("podaj ilosc jedynek wystepujących w tablicy: \n");
+	scanf("%d",&ilejed);
+	printf("podaj nr pol tablicy ktore maja byc jedynkami: (od 1 do %d)\n",dl);
+	
+	
+	for(a=0;a<ilejed;a++)
+	{
+		scanf("%d", &indeks);
+		tab1[indeks]=1;
+	}
+	
+	printf("podaj liczbe krokow ewolucji: \n");
+	scanf("%d", &krok);
+	
+	for(a=0;a<krok;a++)
+	{
+		
+	if(pom%2==1)
+	{
+		for(b=1;b<dl+1;b++)
+		{
+		printf("%2d", tab1[b]);
+		}
+			
+			for(c=1;c<dl+1;c++)
+			{
+				if((tab1[c-1]+tab1[c]+tab1[c+1])%2==0)
+				{
+				tab2[c]=0;
+				}
+				else
+				{
+				tab2[c]=1;
+				}
+			}
+	}
+	
+	else
+	{
+		for(b=1;b<dl+1;b++)
+		{
+			printf("%2d", tab2[b]);
+		}
+		
+			for(c=1;c<dl+2;c++)
+			{
+				if((tab2[c-1]+tab2[c]+tab2[c+1])%2==0)
+				{
+				tab1[c]=0;
+				}
+				else
+				{
+				tab1[c]=1;
+				}
+			}
+	}
+	
+	pom=pom+1;
+	printf("\n");		
+	}
+}
