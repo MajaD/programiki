@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main ()
+{
+	float approx, skl,f;
+	int k,n,o;
+	k=0;
+	o=1;
+	approx=1;
+	skl=1;
+	printf("podaj liczbe: ");
+	scanf("%d", &n);
+	while(k<=n)
+	{
+		k=k+1;	
+		o=o*k;
+		f=skl/o;
+		approx=f+approx;
+	
+	}
+	printf("%.100f",approx);
+		
+}
